@@ -32,5 +32,6 @@
 *.app
 
 # misc
+build/
 Debug/
 v17/
