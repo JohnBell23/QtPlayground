@@ -23,16 +23,23 @@ private slots:
     void on_btnOpen_clicked();
     void readSerialData();
 
-    void on_pushButton_clicked();
+    void on_btnSendTu_clicked();
 
 private:
     const QString INIT_SEND="#gst";
     const QString INIT_EXPECT="#gst";
+
+    QString m_received;
 
     Ui::MainWindow *ui;
     QSerialPort *serial;
 
     void LoadComportList();
     void sendTu();
+    void openDefaultComport();
+    bool tryInitSend();
+    void doSend(QString data);
+    bool openComport(QString comportName);
+    void setActiveComport(QString compoortName);
 };
 #endif // MAINWINDOW_H
